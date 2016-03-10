@@ -123,7 +123,7 @@ window.addEventListener('load', function(e) {
             // If we're moving fast enough #movefastandbreakthings.
             var v = sprite.physics._body.GetLinearVelocity()
 
-            if (Math.sqrt(v.x * v.x + v.y * v.y) > 5) {
+            if (v.x * v.x + v.y * v.y > 25) {
                 this.destroy();
                 state.level++;
                 Q.stageScene('level' + state.level);
