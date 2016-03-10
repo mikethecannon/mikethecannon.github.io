@@ -125,7 +125,7 @@ window.addEventListener('load', function(e) {
         init: function(props) {
             this._super(Q._extend(props, {
                 shape: 'circle',
-                color: 'pink',
+                color: 'rgba(0,0,0,0)',
                 r: 8,
                 type: 'static'
             }));

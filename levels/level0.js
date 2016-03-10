@@ -102,6 +102,26 @@ function loadLevel0() {
             x: 400,
             y: 190
         }));
+        stage.insert(new Q.Sprite({
+            x: 400,
+            y: 190,
+            w: 25,
+            h: 25,
+            cx: 11,
+            cy: 12,
+            shape: 'image',
+            asset: 'img/PlayAsaTeam.svg'
+        }));
+        stage.insert(new Q.Sprite({
+            x: 400,
+            y: 190,
+            w: 30,
+            h: 30,
+            cx: 14,
+            cy: 15,
+            shape: 'image',
+            asset: 'img/mcb-cage.svg'
+        }));
 
         stage.insert(new Q.Sprite({
             w: 30,
