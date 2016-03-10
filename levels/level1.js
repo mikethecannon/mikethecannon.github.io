@@ -1,5 +1,5 @@
-function loadLevel0() {
-    Q.scene('level0', new Q.Scene(function(stage) {
+function loadLevel1() {
+    Q.scene('level1', new Q.Scene(function(stage) {
         targetCount = 0;
         stage.add("world");
         stage.insert(new Q.Sprite({

@@ -60,6 +60,20 @@ window.addEventListener('load', function(e) {
         this.p.angle = this.target.p.angle;
       }
     });
+    Q.Sprite.extend('CannonBaseImg', {
+      init: function(props) {
+        this._super({
+          shape: 'image',
+          asset: 'img/mcb-base.svg',
+          x: 10,
+          y: 210,
+          w: 50,
+          h: 50,
+          cx: 12,
+          cy: 15
+        });
+      }
+    });
     Q.Sprite.extend('Cannon', {
         init: function(props) {
             this._super({
@@ -141,7 +155,10 @@ window.addEventListener('load', function(e) {
 
         var angle = Math.atan2(point.y - cannon.p.y,
             point.x - cannon.p.x);
-        cannon.p.angle = angle * 180 / Math.PI;
+        angle = angle * 180 / Math.PI;
+        if (angle > 8 && angle > 0) { angle = 7; }
+        if (angle < -100 && angle < 0) { angle = -100; }
+        cannon.p.angle = angle;
         e.preventDefault();
     };
 

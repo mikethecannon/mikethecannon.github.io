@@ -87,11 +87,12 @@ function loadLevel0() {
             h: 30,
             x: 10,
             y: 210,
-            color: 'blue'
+            color: 'rgba(0,0,255,0)'
         }));
 
         stage.cannon = stage.insert(new Q.Cannon());
         stage.insert(new Q.CannonImg({'target': stage.cannon}));
+        stage.insert(new Q.CannonBaseImg());
         stage.viewport(600, 400);
         stage.centerOn(300, 100);
 
