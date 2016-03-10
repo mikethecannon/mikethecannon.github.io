@@ -91,6 +91,7 @@ function loadLevel0() {
         }));
 
         stage.cannon = stage.insert(new Q.Cannon());
+        stage.insert(new Q.CannonImg({'target': stage.cannon}));
         stage.viewport(600, 400);
         stage.centerOn(300, 100);
 

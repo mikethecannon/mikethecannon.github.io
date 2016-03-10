@@ -48,7 +48,8 @@ Quintus.SVG = function(Q) {
         angle: 0,
         active: true,
         cx: 0,
-        cy: 0
+        cy: 0,
+        asset: '',
       }));
       this.createShape();
       this.svg.sprite = this;
@@ -81,6 +82,11 @@ Quintus.SVG = function(Q) {
                             return pt[0] + "," + pt[1];
                           }).join(" ");
           this.set({ points: pts });
+          break;
+        case 'image':
+          this.svg = document.createElementNS(SVG_NS,'image');
+          this.svg.setAttributeNS('http://www.w3.org/1999/xlink', 'href', this.p.asset);
+          this.set( {'width': this.p.w, 'height': this.p.h} );
           break;
           
       }

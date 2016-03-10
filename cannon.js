@@ -41,12 +41,30 @@ window.addEventListener('load', function(e) {
             }
         }
     });
-
+    Q.Sprite.extend('CannonImg', {
+      init: function(props) {
+        this._super({
+          shape: 'image',
+          asset: 'img/mcb-rotate.svg',
+          x: 8,
+          y: 210,
+          cx: 5,
+          cy: 40,
+          w: 95,
+          h: 66
+        });
+        this.target = props.target;
+        this.on('step', this, 'matchTarget');
+      },
+      matchTarget: function(dt) {
+        this.p.angle = this.target.p.angle;
+      }
+    });
     Q.Sprite.extend('Cannon', {
         init: function(props) {
             this._super({
                 shape: 'polygon',
-                color: 'black',
+                color: 'rgba(0,0,0,0)',
                 points: [
                     [0, 0],
                     [0, -5],

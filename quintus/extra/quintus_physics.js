@@ -45,6 +45,7 @@ Quintus.Physics = function(Q) {
       this.col = {};
       this.scale = this.opts.scale;
       this.entity.on('step',this,'boxStep');
+      this.toBeDeleted = [];
     },
 
     setCollisionData: function(contact,impulse) {
@@ -90,6 +91,10 @@ Quintus.Physics = function(Q) {
 
     boxStep: function(dt) {
       if(dt > 1/20) { dt = 1/20; }
+      for (var i = 0; i < this.toBeDeleted.length; ++i) {
+        this.destroyBody(this.toBeDeleted[i]);
+      }
+      this.toBeDeleted = [];
       this._world.Step(dt, 
                       this.opts.velocityIterations,
                       this.opts.positionIterations);
@@ -110,7 +115,7 @@ Quintus.Physics = function(Q) {
         this.entity.on('inserted',this,'inserted');
       }
       this.entity.on('step',this,'step');
-      this.entity.on('removed',this,'removed');
+      this.entity.on('destroyed',this,'removed');
     },
 
     position: function(x,y) {
@@ -175,9 +180,7 @@ Quintus.Physics = function(Q) {
     },
 
     removed: function() {
-      var entity = this.entity,
-          stage = entity.stage;
-      stage.world.destroyBody(this._body);
+      this.entity.stage.world.toBeDeleted.push(this._body);
     },
 
     step: function() {
