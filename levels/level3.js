@@ -1,6 +1,7 @@
-function loadLevel0() {
-    Q.scene('level0', new Q.Scene(function(stage) {
+function loadLevel3() {
+    Q.scene('level3', new Q.Scene(function(stage) {
         stage.add("world");
+
         stage.insert(new Q.Sprite({
             x: -675+1024/2,
             y: -35-768/2,
@@ -9,6 +10,7 @@ function loadLevel0() {
             shape: 'image',
             asset: 'img/mcb-level-art.svg'
         }));
+
         // Floor
         stage.insert(new Q.Sprite({
             x: 250,
@@ -20,7 +22,7 @@ function loadLevel0() {
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 700,
+            x: 725,
             y: -100,
             w: 5,
             h: 650,
@@ -38,79 +40,116 @@ function loadLevel0() {
             type: "static"
         }))
 
+        //big box
+        stage.insert(new Q.Sprite({
+            w: 200,
+            h: 70,
+            x: 325,
+            y: -50 
+        }));
+
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
-            x: 500,
+            x: 300,
+            y: 80
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 80
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 40
+        }));
+
+
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
             y: 200
         }));
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
-            x: 550,
+            x: 350,
             y: 200
         }));
         stage.insert(new Q.Sprite({
             w: 70,
             h: 10,
-            x: 525,
+            x: 325,
             y: 170
         }));
+
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
-            x: 500,
+            x: 300,
             y: 130
         }));
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
-            x: 550,
+            x: 350,
             y: 130
         }));
         stage.insert(new Q.Sprite({
             w: 70,
             h: 10,
-            x: 525,
+            x: 325,
             y: 110
         }));
 
         stage.insert(new Q.Sprite({
-            points: [
-                [0, 0],
-                [50, -50],
-                [150, -50],
-                [200, 0]
-            ],
-            x: 200,
-            y: 225,
-            type: 'static',
-            shape: 'polygon'
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 110-120
         }));
 
         stage.insert(new Q.Sprite({
             w: 50,
             h: 50,
-            x: 300,
+            x: 700,
             y: 150
         }));
         stage.insert(new Q.Sprite({
             w: 25,
             h: 25,
-            x: 300,
+            x: 700,
             y: 115
         }));
 
+
+
         stage.each(function() {
             if (this.p.shape !== 'image') {
-                this.add("physics");                
+                this.add("physics");
             }
-        }); 
+        });
 
-        LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
+        LevelBuilder.addTarget(stage, 630, -180, 'img/Customer.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(800, 600);
-        stage.centerOn(300, -25);
+        stage.viewport(1024, 768);
+        stage.centerOn(675, 35);
 
 }))};
