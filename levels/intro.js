@@ -16,6 +16,7 @@ loadIntro = function() {
                 Q.clearStages();
                 loadLevel0();
                 loadLevel1();
+                loadLevel3();
                 loadLevel6();
                 Q.stageScene("level0");
             }

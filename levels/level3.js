@@ -41,14 +41,6 @@ function loadLevel3() {
         }))
 
 
-        //big box
-        stage.insert(new Q.Sprite({
-            w: 200,
-            h: 70,
-            x: 325,
-            y: -50 
-        }));
-
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
@@ -139,6 +131,23 @@ function loadLevel3() {
             y: 115
         }));
 
+        // Ramp
+        stage.insert(new Q.Sprite({
+            w: 25,
+            h: 250,
+            x: 500,
+            y: 115
+        }));
+
+        // blocker
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 350,
+            x: 550,
+            y: -215,
+            type: 'static'
+
+        }));
 
 
         stage.each(function() {
@@ -147,7 +156,7 @@ function loadLevel3() {
             }
         });
 
-        LevelBuilder.addTarget(stage, 630, -180, 'img/Customer.svg');
+        LevelBuilder.addTarget(stage, 630, -180, 'img/OpenCompany.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
         stage.viewport(800, 600);
