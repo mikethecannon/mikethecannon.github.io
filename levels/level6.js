@@ -1,34 +1,32 @@
 function loadLevel6() {
-    Q.scene('level6', new Q.Scene(function(stage) {
+    Q.scene('level2', new Q.Scene(function(stage) {
         targetCount = 0;
         stage.add("world");
 
         stage.insert(new Q.Sprite({
-            x: -100,
-            y: -250,
-            w: 800,
-            h: 600,
+            x: -675+1024/2,
+            y: -35-768/2,
+            w: 1024,
+            h: 768,
             shape: 'image',
             asset: 'img/mcb-level-art.svg'
         }));
 
         // Floor
         stage.insert(new Q.Sprite({
-            x: 300,
-            y: 293,
-            w: 800,
+            x: 250,
+            y: 250,
+            w: 960,
             h: 50,
-            cx: 0,
-            cy: 0,
             type: "static"
         }))
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 700,
-            y: 25,
+            x: 725,
+            y: -100,
             w: 5,
-            h: 585,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -36,9 +34,9 @@ function loadLevel6() {
         // Left wall
         stage.insert(new Q.Sprite({
             x: -100,
-            y: 25,
+            y: -100,
             w: 5,
-            h: 585,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -49,10 +47,10 @@ function loadLevel6() {
             }
         });
 
-        LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
-        stage.cannon = LevelBuilder.addCannon(stage, 10, 260);
+        //LevelBuilder.addTarget(stage, 100, -100, 'img/HeartandBalance.svg');
+        stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(800, 600);
-        stage.centerOn(300, 100);
+        stage.viewport(1024, 768);
+        stage.centerOn(675, 35);
 
 }))};

@@ -1,22 +1,21 @@
 function loadLevel0() {
     Q.scene('level0', new Q.Scene(function(stage) {
-        targetCount = 0;
         stage.add("world");
         // Floor
         stage.insert(new Q.Sprite({
             x: 250,
             y: 250,
-            w: 700,
+            w: 960,
             h: 50,
             type: "static"
         }))
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 600,
-            y: 25,
+            x: 725,
+            y: -100,
             w: 5,
-            h: 500,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -24,9 +23,9 @@ function loadLevel0() {
         // Left wall
         stage.insert(new Q.Sprite({
             x: -100,
-            y: 25,
+            y: -100,
             w: 5,
-            h: 500,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -101,7 +100,7 @@ function loadLevel0() {
         LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(1200, 800);
-        stage.centerOn(500, 200);
+        stage.viewport(1024, 768);
+        stage.centerOn(675, 35);
 
 }))};

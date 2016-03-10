@@ -4,10 +4,10 @@ loadIntro = function() {
         stage.insert(new Q.Sprite({
             x: 0,
             y: 0,
-            w: 800,
-            h: 600,
+            w: 1024,
+            h: 768,
             shape: 'image',
-            asset: 'img/title-screen-2.jpg'
+            asset: 'img/title-screen-4-2.png'
         }));
 
         var startGameIfEnter = function(e) {
@@ -15,6 +15,8 @@ loadIntro = function() {
                 document.removeEventListener('keydown', startGameIfEnter);
                 Q.clearStages();
                 loadLevel0();
+                loadLevel1();
+                loadLevel6();
                 Q.stageScene("level0");
             }
         }
@@ -22,8 +24,8 @@ loadIntro = function() {
         Q.Sprite.extend('IntroText', {
             init: function(props) {
                 this._super({
-                    x: 290,
-                    y: 290,
+                    x: 380,
+                    y: 310,
                     cx: 5,
                     cy: 40,
                     w: 450,
