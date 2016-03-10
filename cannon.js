@@ -134,7 +134,10 @@ window.addEventListener('load', function(e) {
         },
 
         checkHit: function(sprite) {
-            if (sprite instanceof Q.CannonBall) {
+            // If we're moving fast enough #movefastandbreakthings.
+            var v = sprite.physics._body.GetLinearVelocity()
+
+            if (Math.sqrt(v.x * v.x + v.y * v.y) > 5) {
                 this.destroy();
                 state.level++;
                 Q.stageScene('level' + state.level);

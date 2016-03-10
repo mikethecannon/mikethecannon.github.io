@@ -6,7 +6,7 @@ function loadLevel0() {
         stage.insert(new Q.Sprite({
             x: 250,
             y: 250,
-            w: 1200,
+            w: 700,
             h: 50,
             type: "static"
         }))
@@ -16,8 +16,8 @@ function loadLevel0() {
             x: 600,
             y: 25,
             w: 5,
-            h: 800,
-            color: "#cccccc",
+            h: 500,
+            color: "#333333",
             type: "static"
         }))
 
@@ -26,8 +26,8 @@ function loadLevel0() {
             x: -100,
             y: 25,
             w: 5,
-            h: 800,
-            color: "#cccccc",
+            h: 500,
+            color: "#333333",
             type: "static"
         }))
 
@@ -114,7 +114,7 @@ function loadLevel0() {
         stage.cannon = stage.insert(new Q.Cannon());
         stage.insert(new Q.CannonImg({'target': stage.cannon}));
         stage.insert(new Q.CannonBaseImg());
-        stage.viewport(600, 400);
-        stage.centerOn(300, 200);
+        stage.viewport(1200, 800);
+        stage.centerOn(500, 200);
 
 }))};
