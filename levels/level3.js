@@ -22,7 +22,7 @@ function loadLevel3() {
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 725,
+            x: 700,
             y: -100,
             w: 5,
             h: 650,
@@ -39,6 +39,7 @@ function loadLevel3() {
             color: "#333333",
             type: "static"
         }))
+
 
         //big box
         stage.insert(new Q.Sprite({
@@ -128,13 +129,13 @@ function loadLevel3() {
         stage.insert(new Q.Sprite({
             w: 50,
             h: 50,
-            x: 700,
+            x: 650,
             y: 150
         }));
         stage.insert(new Q.Sprite({
             w: 25,
             h: 25,
-            x: 700,
+            x: 650,
             y: 115
         }));
 
@@ -149,7 +150,7 @@ function loadLevel3() {
         LevelBuilder.addTarget(stage, 630, -180, 'img/Customer.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(1024, 768);
-        stage.centerOn(675, 35);
+        stage.viewport(800, 600);
+        stage.centerOn(300, -25);
 
 }))};

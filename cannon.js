@@ -192,7 +192,7 @@ window.addEventListener('load', function(e) {
     var intro = loadIntro();
     loadLevel6();
     loadLevel3();
-    //Q.stageScene(intro);
-    Q.stageScene("level3");
+    Q.stageScene(intro);
+    //Q.stageScene("level3");
 
 });
