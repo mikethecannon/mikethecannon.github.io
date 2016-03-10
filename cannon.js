@@ -188,6 +188,14 @@ window.addEventListener('load', function(e) {
         Q.wrapper.addEventListener(evt, canonFire);
     });
 
+    var restartLevelIfEnter = function(e) {
+        if (e.keyCode === 13 && Q.stage(0).cannon) {
+          Q.clearStage();
+          Q.stageScene('level' + state.level);
+        }
+    }
+    document.addEventListener('keydown', restartLevelIfEnter);
+
 
     var intro = loadIntro();
     loadLevel6();
