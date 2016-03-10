@@ -190,6 +190,9 @@ window.addEventListener('load', function(e) {
 
 
     var intro = loadIntro();
-    Q.stageScene(intro);
+    loadLevel6();
+    loadLevel3();
+    //Q.stageScene(intro);
+    Q.stageScene("level3");
 
 });

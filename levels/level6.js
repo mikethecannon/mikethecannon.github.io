@@ -41,13 +41,118 @@ function loadLevel6() {
             type: "static"
         }))
 
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 80
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 80
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 40
+        }));
+
+
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 200
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 200
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 170
+        }));
+
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 130
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 130
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 110
+        }));
+
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 110-120
+        }));
+
+        stage.insert(new Q.Sprite({
+            w: 50,
+            h: 50,
+            x: 700,
+            y: 150
+        }));
+        stage.insert(new Q.Sprite({
+            w: 25,
+            h: 25,
+            x: 700,
+            y: 115
+        }));
+
+        // box 2
+        stage.insert(new Q.Sprite({
+            w: 100,
+            h: 300,
+            x: 500,
+            y: 150
+        }));
+        stage.insert(new Q.Sprite({
+            w: 50,
+            h: 50,
+            x: 500,
+            y: -115
+        }));
+
+
         stage.each(function() {
             if (this.p.shape !== 'image') {
-                this.add("physics");                
+                this.add("physics");
             }
         });
 
-        //LevelBuilder.addTarget(stage, 100, -100, 'img/HeartandBalance.svg');
+        LevelBuilder.addTarget(stage, 630, 180, 'img/BetheChange.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
         stage.viewport(1024, 768);
