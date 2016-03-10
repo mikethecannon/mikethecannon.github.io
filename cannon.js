@@ -34,12 +34,30 @@ window.addEventListener('load', function(e) {
             }
         }
     });
-
+    Q.Sprite.extend('CannonImg', {
+      init: function(props) {
+        this._super({
+          shape: 'image',
+          asset: 'img/mcb-rotate.svg',
+          x: 8,
+          y: 210,
+          cx: 5,
+          cy: 40,
+          w: 95,
+          h: 66
+        });
+        this.target = props.target;
+        this.on('step', this, 'matchTarget');
+      },
+      matchTarget: function(dt) {
+        this.p.angle = this.target.p.angle;
+      }
+    });
     Q.Sprite.extend('Cannon', {
         init: function(props) {
             this._super({
                 shape: 'polygon',
-                color: 'black',
+                color: 'rgba(0,0,0,0)',
                 points: [
                     [0, 0],
                     [0, -5],
@@ -52,7 +70,7 @@ window.addEventListener('load', function(e) {
                     [0, 5]
                 ],
                 x: 10,
-                y: 210
+                y: 210,
             });
         },
 
@@ -191,6 +209,7 @@ window.addEventListener('load', function(e) {
         }));
 
         stage.cannon = stage.insert(new Q.Cannon());
+        stage.insert(new Q.CannonImg({'target': stage.cannon}));
         stage.viewport(600, 400);
         stage.centerOn(300, 100);
 
