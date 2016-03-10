@@ -23,7 +23,7 @@ function loadLevel6() {
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 725,
+            x: 700,
             y: -100,
             w: 5,
             h: 650,
@@ -50,7 +50,7 @@ function loadLevel6() {
         //LevelBuilder.addTarget(stage, 100, -100, 'img/HeartandBalance.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(1024, 768);
-        stage.centerOn(675, 35);
+        stage.viewport(800, 600);
+        stage.centerOn(300, -25);
 
 }))};

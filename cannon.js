@@ -16,7 +16,7 @@ window.addEventListener('load', function(e) {
         .include('Input, Sprites, Scenes, SVG, Physics')
         .svgOnly()
         .setup('quintus', {
-            maximize: true
+            maximize: false
         })
 
     Q.preload("fire.mp3");
