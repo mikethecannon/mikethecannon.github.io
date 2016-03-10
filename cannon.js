@@ -157,7 +157,6 @@ window.addEventListener('load', function(e) {
             this.p.y += 30 * dt;
         }
     });
-    loadLevel1();
 
     var cannonMove = function(e) {
       if (!Q.stage(0).cannon) { return; }

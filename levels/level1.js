@@ -1,22 +1,21 @@
 function loadLevel1() {
     Q.scene('level1', new Q.Scene(function(stage) {
-        targetCount = 0;
         stage.add("world");
         // Floor
         stage.insert(new Q.Sprite({
-            x: 200,
+            x: 250,
             y: 250,
-            w: 600,
+            w: 960,
             h: 50,
             type: "static"
         }))
 
         // Right wall
         stage.insert(new Q.Sprite({
-            x: 500,
-            y: 100,
+            x: 725,
+            y: -100,
             w: 5,
-            h: 900,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -24,9 +23,9 @@ function loadLevel1() {
         // Left wall
         stage.insert(new Q.Sprite({
             x: -100,
-            y: 100,
+            y: -100,
             w: 5,
-            h: 900,
+            h: 650,
             color: "#333333",
             type: "static"
         }))
@@ -100,6 +99,25 @@ function loadLevel1() {
             y: 110
         }));
 
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 300,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 10,
+            h: 50,
+            x: 350,
+            y: 130-120
+        }));
+        stage.insert(new Q.Sprite({
+            w: 70,
+            h: 10,
+            x: 325,
+            y: 110-120
+        }));
+
         stage.each(function() {
             this.add("physics");
         });
@@ -107,7 +125,7 @@ function loadLevel1() {
         LevelBuilder.addTarget(stage, 100, -100, 'img/HeartandBalance.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.viewport(800, 600);
-        stage.centerOn(300, 0);
+        stage.viewport(1024, 768);
+        stage.centerOn(675, 35);
 
 }))};
