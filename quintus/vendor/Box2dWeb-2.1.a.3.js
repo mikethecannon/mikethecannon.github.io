@@ -5759,7 +5759,7 @@ Box2D.postDefs = [];
    }
    b2World.prototype.DestroyBody = function (b) {
       if (this.IsLocked() == true) {
-         return;
+         return false;
       }
       var jn = b.m_jointList;
       while (jn) {
@@ -5804,6 +5804,7 @@ Box2D.postDefs = [];
       if (b == this.m_bodyList) {
          this.m_bodyList = b.m_next;
       }--this.m_bodyCount;
+      return true;
    }
    b2World.prototype.CreateJoint = function (def) {
       var j = b2Joint.Create(def, null);
