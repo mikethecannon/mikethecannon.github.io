@@ -104,7 +104,7 @@ function loadLevel1() {
             this.add("physics");
         });
 
-        LevelBuilder.addTarget(stage, 100, -100, 'img/PlayAsaTeam.svg');
+        LevelBuilder.addTarget(stage, 100, -100, 'img/HeartandBalance.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
         stage.viewport(800, 600);

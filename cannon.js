@@ -6,12 +6,20 @@ window.addEventListener('load', function(e) {
     state = {};
     state.level = 0;
 
-    var Q = window.Q = Quintus()
-        .include('Input,Sprites,Scenes,SVG,Physics')
+    // MFW THAT WORKS
+    var fire_sound = new Audio('audio/fire.mp3');
+
+    var Q = window.Q = Quintus({
+            development: true, //okay
+            audioSupported: ["mp3"]
+        })
+        .include('Input, Sprites, Scenes, SVG, Physics')
         .svgOnly()
         .setup('quintus', {
             maximize: true
         })
+
+    Q.preload("fire.mp3");
 
 
     Q.Sprite.extend('CannonBall', {
@@ -94,6 +102,8 @@ window.addEventListener('load', function(e) {
                 return
             }
 
+            fire_sound.play();
+
             var dx = Math.cos(this.p.angle / 180 * Math.PI),
                 dy = Math.sin(this.p.angle / 180 * Math.PI),
                 ball = new Q.CannonBall({
@@ -146,6 +156,7 @@ window.addEventListener('load', function(e) {
             this.p.y += 30 * dt;
         }
     });
+    loadLevel1();
 
     var cannonMove = function(e) {
       if (!Q.stage(0).cannon) { return; }
