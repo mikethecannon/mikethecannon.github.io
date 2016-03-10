@@ -4,7 +4,7 @@ window.addEventListener('load',function(e) {
                      .svgOnly()
                      .setup('quintus',{ maximize: true });
 
-  
+
   Q.Sprite.extend('CannonBall',{
     init: function(props) {
       this._super({
@@ -112,33 +112,32 @@ window.addEventListener('load',function(e) {
     stage.cannon = stage.insert(new Q.Cannon());
     stage.viewport(600,400);
     stage.centerOn(300,100);
-       
+
   }));
-  	Q.stageScene("level");
-  	var cannonMove=function(e) {
+    Q.stageScene("level");
+    var cannonMove=function(e) {
     var stage = Q.stage(0), 
         cannon = stage.cannon,
         touch = e.changedTouches ?  
                 e.changedTouches[0] : e,
         point = stage.browserToWorld(touch.pageX,touch.pageY);
-   
-    	var angle = Math.atan2(point.y - cannon.p.y,
+
+        var angle = Math.atan2(point.y - cannon.p.y,
                            point.x - cannon.p.x);
-	    cannon.p.angle = angle * 180 / Math.PI;
-	    e.preventDefault();
-  	};
+        cannon.p.angle = angle * 180 / Math.PI;
+        e.preventDefault();
+    };
     Q._each(["touchstart","mousemove","touchmove"],function(evt) {
         Q.wrapper.addEventListener(evt,cannonMove);
     },this);
 
-	var canonFire=function(e) {
-		Q.stage(0).cannon.fire();
-   		e.preventDefault();
-	}
-	Q._each(["touchend","mouseup"],function(evt) {
-		Q.wrapper.addEventListener(evt,canonFire);
-	});
+    var canonFire=function(e) {
+        Q.stage(0).cannon.fire();
+        e.preventDefault();
+    }
+    Q._each(["touchend","mouseup"],function(evt) {
+        Q.wrapper.addEventListener(evt,canonFire);
+    });
 
-  
 });
 
