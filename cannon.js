@@ -11,7 +11,7 @@ window.addEventListener('load', function(e) {
         .svgOnly()
         .setup('quintus', {
             maximize: true
-        });
+        })
 
 
     Q.Sprite.extend('CannonBall', {
@@ -147,14 +147,10 @@ window.addEventListener('load', function(e) {
         }
     });
 
-    loadLevel0();
-    loadLevel1();
-
-
-    Q.stageScene("level0");
     var cannonMove = function(e) {
-        var stage = Q.stage(0),
-            cannon = stage.cannon,
+      if (!Q.stage(0).cannon) { return; }
+        var stage = Q.stage(0);
+        var cannon = stage.cannon,
             touch = e.changedTouches ?
             e.changedTouches[0] : e,
             point = stage.browserToWorld(touch.pageX, touch.pageY);
@@ -173,6 +169,7 @@ window.addEventListener('load', function(e) {
     }, this);
 
     var canonFire = function(e) {
+        if (!Q.stage(0).cannon) { return; }
         Q.stage(0).cannon.fire();
         e.preventDefault();
     }
@@ -181,6 +178,7 @@ window.addEventListener('load', function(e) {
     });
 
 
-
+    var intro = loadIntro();
+    Q.stageScene(intro);
 
 });
