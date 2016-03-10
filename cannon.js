@@ -30,8 +30,8 @@ window.addEventListener('load', function(e) {
                 r: 15,
                 restitution: 0.5,
                 density: 4,
-                x: props.dx * 50 + 10,
-                y: props.dy * 50 + 210,
+                x: props.dx * 50 + props.cannon.p.x,
+                y: props.dy * 50 + props.cannon.p.y,
                 seconds: 30
             });
             this.add('physics');
@@ -51,17 +51,17 @@ window.addEventListener('load', function(e) {
     });
     Q.Sprite.extend('CannonImg', {
       init: function(props) {
+        this.target = props.target;
         this._super({
           shape: 'image',
           asset: 'img/mcb-rotate.svg',
-          x: 8,
-          y: 210,
+          x: this.target.p.x,
+          y: this.target.p.y,
           cx: 5,
           cy: 40,
           w: 95,
           h: 66
         });
-        this.target = props.target;
         this.on('step', this, 'matchTarget');
       },
       matchTarget: function(dt) {
@@ -107,6 +107,7 @@ window.addEventListener('load', function(e) {
             var dx = Math.cos(this.p.angle / 180 * Math.PI),
                 dy = Math.sin(this.p.angle / 180 * Math.PI),
                 ball = new Q.CannonBall({
+                    cannon: this,
                     dx: dx,
                     dy: dy,
                     angle: this.p.angle

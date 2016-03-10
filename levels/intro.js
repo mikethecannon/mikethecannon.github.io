@@ -4,10 +4,10 @@ loadIntro = function() {
         stage.insert(new Q.Sprite({
             x: 0,
             y: 0,
-            w: 742,
-            h: 571,
+            w: 800,
+            h: 600,
             shape: 'image',
-            asset: 'img/title-screen.png'
+            asset: 'img/title-screen-2.jpg'
         }));
 
         var startGameIfEnter = function(e) {
@@ -22,8 +22,8 @@ loadIntro = function() {
         Q.Sprite.extend('IntroText', {
             init: function(props) {
                 this._super({
-                    x: 250,
-                    y: 320,
+                    x: 290,
+                    y: 290,
                     cx: 5,
                     cy: 40,
                     w: 450,
