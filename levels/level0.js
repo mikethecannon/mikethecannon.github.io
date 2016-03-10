@@ -2,11 +2,32 @@ function loadLevel0() {
     Q.scene('level0', new Q.Scene(function(stage) {
         targetCount = 0;
         stage.add("world");
+        // Floor
         stage.insert(new Q.Sprite({
             x: 250,
             y: 250,
-            w: 700,
+            w: 1200,
             h: 50,
+            type: "static"
+        }))
+
+        // Right wall
+        stage.insert(new Q.Sprite({
+            x: 600,
+            y: 25,
+            w: 5,
+            h: 800,
+            color: "#cccccc",
+            type: "static"
+        }))
+
+        // Left wall
+        stage.insert(new Q.Sprite({
+            x: -100,
+            y: 25,
+            w: 5,
+            h: 800,
+            color: "#cccccc",
             type: "static"
         }))
 
@@ -87,12 +108,12 @@ function loadLevel0() {
             h: 30,
             x: 10,
             y: 210,
-            color: 'blue'
+            color: 'red'
         }));
 
         stage.cannon = stage.insert(new Q.Cannon());
         stage.insert(new Q.CannonImg({'target': stage.cannon}));
         stage.viewport(600, 400);
-        stage.centerOn(300, 100);
+        stage.centerOn(300, 200);
 
 }))};
