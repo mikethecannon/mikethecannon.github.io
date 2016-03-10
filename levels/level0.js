@@ -98,22 +98,9 @@ function loadLevel0() {
             this.add("physics");
         });
 
-        stage.insert(new Q.Target({
-            x: 400,
-            y: 190
-        }));
+        LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
+        stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.insert(new Q.Sprite({
-            w: 30,
-            h: 30,
-            x: 10,
-            y: 210,
-            color: 'rgba(0,0,255,0)'
-        }));
-
-        stage.cannon = stage.insert(new Q.Cannon());
-        stage.insert(new Q.CannonImg({'target': stage.cannon}));
-        stage.insert(new Q.CannonBaseImg());
         stage.viewport(1200, 800);
         stage.centerOn(500, 200);
 
