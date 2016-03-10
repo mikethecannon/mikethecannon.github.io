@@ -112,7 +112,7 @@ window.addEventListener('load', function(e) {
             this._super(Q._extend(props, {
                 shape: 'circle',
                 color: 'rgba(0,0,0,0)',
-                r: 8,
+                r: 10,
                 type: 'static'
             }));
             this.add('physics');
@@ -130,8 +130,26 @@ window.addEventListener('load', function(e) {
             }
         }
     });
+    Q.Sprite.extend('MovingBeam', {
+        init: function(props) {
+            this._super(Q._extend(props, {
+                shape: 'block',
+                color: 'black',
+                w: 10,
+                h: 250,
+                //type: 'static'
+            }));
+            this.on('step', this, 'move');
+        },
+
+        move: function(dt) {
+            this.p.y += 30 * dt;
+        }
+    });
 
     loadLevel0();
+    loadLevel1();
+
 
     Q.stageScene("level0");
     var cannonMove = function(e) {
