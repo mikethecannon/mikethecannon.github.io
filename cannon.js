@@ -60,20 +60,6 @@ window.addEventListener('load', function(e) {
         this.p.angle = this.target.p.angle;
       }
     });
-    Q.Sprite.extend('CannonBaseImg', {
-      init: function(props) {
-        this._super({
-          shape: 'image',
-          asset: 'img/mcb-base.svg',
-          x: 10,
-          y: 210,
-          w: 50,
-          h: 50,
-          cx: 12,
-          cy: 15
-        });
-      }
-    });
     Q.Sprite.extend('Cannon', {
         init: function(props) {
             this._super({
@@ -90,8 +76,8 @@ window.addEventListener('load', function(e) {
                     [5, 10],
                     [0, 5]
                 ],
-                x: 10,
-                y: 210,
+                x: props.x,
+                y: props.y,
             });
             this.fireVelocity = 1000;
             this.canShootTimer = SHOOT_TIMER_SECONDS;
@@ -141,7 +127,6 @@ window.addEventListener('load', function(e) {
             }
         }
     });
-
 
     loadLevel0();
 

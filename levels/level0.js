@@ -98,42 +98,9 @@ function loadLevel0() {
             this.add("physics");
         });
 
-        stage.insert(new Q.Target({
-            x: 400,
-            y: 190
-        }));
-        stage.insert(new Q.Sprite({
-            x: 400,
-            y: 190,
-            w: 25,
-            h: 25,
-            cx: 11,
-            cy: 12,
-            shape: 'image',
-            asset: 'img/PlayAsaTeam.svg'
-        }));
-        stage.insert(new Q.Sprite({
-            x: 400,
-            y: 190,
-            w: 30,
-            h: 30,
-            cx: 14,
-            cy: 15,
-            shape: 'image',
-            asset: 'img/mcb-cage.svg'
-        }));
+        LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
+        stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
-        stage.insert(new Q.Sprite({
-            w: 30,
-            h: 30,
-            x: 10,
-            y: 210,
-            color: 'rgba(0,0,255,0)'
-        }));
-
-        stage.cannon = stage.insert(new Q.Cannon());
-        stage.insert(new Q.CannonImg({'target': stage.cannon}));
-        stage.insert(new Q.CannonBaseImg());
         stage.viewport(600, 400);
         stage.centerOn(300, 200);
 
