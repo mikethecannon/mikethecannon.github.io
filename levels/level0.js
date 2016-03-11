@@ -113,7 +113,7 @@ function loadLevel0() {
             }
         }); 
 
-        LevelBuilder.addTarget(stage, 400, 190, 'img/PlayAsaTeam.svg');
+        LevelBuilder.addTarget(stage, 520, 80, 'img/PlayAsaTeam.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
         stage.viewport(800, 600);
