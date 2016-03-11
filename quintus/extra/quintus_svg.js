@@ -44,7 +44,7 @@ Quintus.SVG = function(Q) {
     init: function(props) {
       this._super(Q._defaults(props,{
         shape: 'block',
-        color: props.type === 'static' ? 'black' : '#8c5b1f',
+        color: props.type === 'static' ? '#333' : '#8c5b1f',
         angle: 0,
         active: true,
         cx: 0,

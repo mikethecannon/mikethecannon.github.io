@@ -8,6 +8,7 @@ window.addEventListener('load', function(e) {
 
     // MFW THAT WORKS
     var fire_sound = new Audio('audio/fire.mp3');
+    var win_sound = new Audio('audio/win-level-sound.mp3');
 
     var Q = window.Q = Quintus({
             development: true, //okay
@@ -19,14 +20,12 @@ window.addEventListener('load', function(e) {
             maximize: false
         })
 
-    Q.preload("fire.mp3");
-
 
     Q.Sprite.extend('CannonBall', {
         init: function(props) {
             this._super({
                 shape: 'circle',
-                color: 'black',
+                color: '#111',
                 r: 15,
                 restitution: 0.5,
                 density: 4,
@@ -135,6 +134,7 @@ window.addEventListener('load', function(e) {
             var v = sprite.physics._body.GetLinearVelocity()
 
             if (v.x * v.x + v.y * v.y > 25) {
+                win_sound.play();
                 this.destroy();
                 state.level++;
                 if (state.level > 4) {
