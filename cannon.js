@@ -25,7 +25,7 @@ window.addEventListener('load', function(e) {
         init: function(props) {
             this._super({
                 shape: 'circle',
-                color: 'black',
+                color: '#111',
                 r: 15,
                 restitution: 0.5,
                 density: 4,
