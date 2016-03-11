@@ -137,7 +137,7 @@ window.addEventListener('load', function(e) {
                 win_sound.play();
                 this.destroy();
                 state.level++;
-                if (state.level > 3) {
+                if (state.level > 4) {
                     Q.stageScene("win");
                 }
                 else {

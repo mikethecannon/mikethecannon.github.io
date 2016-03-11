@@ -1,5 +1,5 @@
-function loadLevel3() {
-    Q.scene('level3', new Q.Scene(function(stage) {
+function loadLevel4() {
+    Q.scene('level4', new Q.Scene(function(stage) {
         stage.add("world");
 
         stage.insert(new Q.Sprite({
@@ -131,23 +131,12 @@ function loadLevel3() {
             y: 115
         }));
 
-        // Ramp
+        // big box 
         stage.insert(new Q.Sprite({
-            w: 25,
-            h: 250,
-            x: 500,
-            y: 115
-        }));
-
-        // blocker
-        stage.insert(new Q.Sprite({
-            w: 10,
-            h: 350,
-            x: 550,
-            y: -215,
-            type: 'static',
-            color: '#333333'
-
+            w: 250,
+            h: 100,
+            x: 326,
+            y: -80
         }));
 
 
@@ -157,7 +146,7 @@ function loadLevel3() {
             }
         });
 
-        LevelBuilder.addTarget(stage, 630, -180, 'img/OpenCompany.svg');
+        LevelBuilder.addTarget(stage, 530, -80, 'img/Customer.svg');
         stage.cannon = LevelBuilder.addCannon(stage, 10, 210);
 
         stage.viewport(800, 600);
