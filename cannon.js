@@ -10,6 +10,10 @@ window.addEventListener('load', function(e) {
     var fire_sound = new Audio('audio/fire.mp3');
     var win_sound = new Audio('audio/win-level-sound.mp3');
 
+    var bgm = new Audio('audio/canon.mp3');
+    bgm.play();
+
+
     var Q = window.Q = Quintus({
             development: true, //okay
             audioSupported: ["mp3"]
