@@ -137,7 +137,7 @@ window.addEventListener('load', function(e) {
             if (v.x * v.x + v.y * v.y > 25) {
                 this.destroy();
                 state.level++;
-                if (state.level > 3) {
+                if (state.level > 4) {
                     Q.stageScene("win");
                 }
                 else {
