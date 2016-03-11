@@ -10,18 +10,16 @@ loadIntro = function() {
             asset: 'img/title-screen-4-2.png'
         }));
 
-        var startGameIfEnter = function(e) {
-            if (e.keyCode === 13) {
-                document.removeEventListener('keydown', startGameIfEnter);
-                Q.clearStages();
-                loadLevel0();
-                loadLevel1();
-                loadLevel6();
-                loadLevel3();
-                loadLevel4();
-                loadWinScreen()
-                Q.stageScene("level0");
-            }
+        var startGameIfClick = function() {
+            document.removeEventListener('click', startGameIfClick);
+            Q.clearStages();
+            loadLevel0();
+            loadLevel1();
+            loadLevel6();
+            loadLevel3();
+            loadLevel4();
+            loadWinScreen()
+            Q.stageScene("level0");
         }
 
         Q.Sprite.extend('IntroText', {
@@ -34,12 +32,12 @@ loadIntro = function() {
                     w: 450,
                     h: 44,
                     shape: 'image',
-                    asset: 'img/press enter to start.svg'
+                    asset: 'img/click-to-start.svg'
                 });
                 this.on('step', this, 'step');
                 this.blinkDelay = 0;
                 this.blinkOn = true;
-                document.addEventListener('keydown', startGameIfEnter);
+                document.addEventListener('click', startGameIfClick);
             },
 
             step: function(dt) {
