@@ -5,6 +5,7 @@ window.addEventListener('load', function(e) {
 
     state = {};
     state.level = 0;
+    state.restartHintTimeout = null;
 
     // MFW THAT WORKS
     var fire_sound = new Audio('audio/fire.mp3');
@@ -144,9 +145,12 @@ window.addEventListener('load', function(e) {
                 state.level++;
                 if (state.level > 4) {
                     Q.stageScene("win");
+                    hideRestartHint();
                 }
                 else {
                     Q.stageScene('level' + state.level);
+                    hideRestartHint();
+                    state.restartHintTimeout = setTimeout(showRestartHint, 1000);
                 }
             }
         }
@@ -202,9 +206,29 @@ window.addEventListener('load', function(e) {
         if (e.keyCode === 13 && Q.stage(0).cannon) {
           Q.clearStage();
           Q.stageScene('level' + state.level);
+          hideRestartHint();
         }
     }
     document.addEventListener('keydown', restartLevelIfEnter);
+
+    var showRestartHint = function() {
+      if (isMobile) { return; }
+      var marquee = document.getElementById('restartHint');
+      var parent = document.body;
+      if (marquee) { parent.removeChild(marquee); }
+      marquee = document.createElement('marquee');
+      marquee.id='restartHint';
+      marquee.scrollAmount=10;
+      marquee.loop=1;
+      marquee.innerHTML = 'Hit Enter to restart the level, you scrub';
+      parent.appendChild(marquee);
+    };
+    var hideRestartHint = function() {
+      var marquee = document.getElementById('restartHint');
+      var parent = document.body;
+      if (marquee) { parent.removeChild(marquee); }
+      clearTimeout(state.restartHintTimeout);
+    };
 
 
     var intro = loadIntro();
