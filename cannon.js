@@ -150,7 +150,7 @@ window.addEventListener('load', function(e) {
                 else {
                     Q.stageScene('level' + state.level);
                     hideRestartHint();
-                    state.restartHintTimeout = setTimeout(showRestartHint, 1000);
+                    state.restartHintTimeout = setTimeout(showRestartHint, 15000);
                 }
             }
         }
