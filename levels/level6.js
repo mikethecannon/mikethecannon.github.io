@@ -118,18 +118,6 @@ function loadLevel6() {
             y: 110-120
         }));
 
-        stage.insert(new Q.Sprite({
-            w: 50,
-            h: 50,
-            x: 700,
-            y: 150
-        }));
-        stage.insert(new Q.Sprite({
-            w: 25,
-            h: 25,
-            x: 700,
-            y: 115
-        }));
 
         // box 2
         stage.insert(new Q.Sprite({
