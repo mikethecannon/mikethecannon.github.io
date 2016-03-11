@@ -24,7 +24,6 @@ function loadLevel0() {
             y: -100,
             w: 5,
             h: 650,
-            color: "#333333",
             type: "static"
         }))
 
@@ -34,7 +33,6 @@ function loadLevel0() {
             y: -100,
             w: 5,
             h: 650,
-            color: "#333333",
             type: "static"
         }))
 
@@ -42,37 +40,43 @@ function loadLevel0() {
             w: 10,
             h: 50,
             x: 500,
-            y: 200
+            y: 200,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
             x: 550,
-            y: 200
+            y: 200,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 70,
             h: 10,
             x: 525,
-            y: 170
+            y: 170,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
             x: 500,
-            y: 130
+            y: 130,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 10,
             h: 50,
             x: 550,
-            y: 130
+            y: 130,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 70,
             h: 10,
             x: 525,
-            y: 110
+            y: 110,
+            color: '#8c5b1f'
         }));
 
         stage.insert(new Q.Sprite({
@@ -92,13 +96,15 @@ function loadLevel0() {
             w: 50,
             h: 50,
             x: 300,
-            y: 150
+            y: 150,
+            color: '#8c5b1f'
         }));
         stage.insert(new Q.Sprite({
             w: 25,
             h: 25,
             x: 300,
-            y: 115
+            y: 115,
+            color: '#8c5b1f'
         }));
 
         stage.each(function() {
