@@ -11,6 +11,7 @@ window.addEventListener('load', function(e) {
     var win_sound = new Audio('audio/win-level-sound.mp3');
 
     var bgm = new Audio('audio/canon.mp3');
+    bgm.loop = true;
     bgm.play();
 
 
